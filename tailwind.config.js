@@ -13,7 +13,8 @@ module.exports = {
     },
   },
   variants: {
-    opacity: ['responsive', 'hover', 'focus', 'disabled']
+    opacity: ['hover', 'focus', 'disabled'],
+    backgroundColor: ['hover', 'focus', 'active'],
   },
   plugins: [
     require('@tailwindcss/typography'),
