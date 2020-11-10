@@ -1,9 +1,24 @@
+import { useState } from 'react';
+import { IncreaseButton, DecreaseButton, CountValue } from './components';
+
 function Challenge() {
+  const [stateCount, setCount] = useState(0);
+
+  function increment() {
+    setCount(stateCount + 1);
+  }
+
+  function decrement() {
+    if (stateCount > 0) {
+      setCount(stateCount - 1);
+    }
+  }
+
   return (
-    <div className="h-full">
-      <p>Exercise 1 Challenge</p>
-      <div className="h-full">Section A</div>
-      <div className="h-full">Section B</div>
+    <div className="grid grid-cols-2 auto-rows-min justify-items-center gap-8 mt-24 px-10">
+      <CountValue>{stateCount}</CountValue>
+      <IncreaseButton onClick={increment} />
+      <DecreaseButton onClick={decrement} />
     </div>
   );
 }
