@@ -2,12 +2,12 @@ import Head from 'next/head';
 
 function Home() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-200 grid grid-cols-2 grid-rows-layout gap-x-4">
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <p className="max-w-content text-3xl text-gray-700">Another new project? Don't tell me you already bought the domain. Hope this one gets completed Good Luck!</p>
+      <h1 className="text-3xl">Homepage</h1>
     </div>
   );
 }

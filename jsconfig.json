@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "_reusable/*": ["./reusable/*"]
+    }
+  },
+  "include": ["./src/**/*"]
+}
