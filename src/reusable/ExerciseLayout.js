@@ -76,12 +76,8 @@ function ExerciseLayout({ playground, challenge, notes }) {
           </motion.div>
         </DialogOverlay>
       </nav>
-      <div className="">
-        <div className="bg-white h-full overflow-y-auto">{playground}</div>
-      </div>
-      <div className="">
-        <div className="bg-white h-full overflow-y-auto">{challenge}</div>
-      </div>
+      <div className="bg-white h-full">{playground}</div>
+      <div className="bg-white h-full">{challenge}</div>
     </div>
   );
 }
