@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --colors",
+    "test-exercises": "yarn test src/exercise-tests/*",
+    "evaluate": "yarn test-exercises --testNamePattern='Evaluate Playground'"
   },
   "dependencies": {
     "@reach/dialog": "^0.11.2",
@@ -19,5 +22,13 @@
     "tailwindcss": "1.9.0"
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.1",
+    "@testing-library/user-event": "^12.2.2",
+    "babel-jest": "^26.6.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3"
+  }
 }
