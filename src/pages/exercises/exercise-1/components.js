@@ -25,3 +25,5 @@ export function DecreaseButton(props) {
 export function CountValue(props) {
   return <span {...props} data-testid="counter" className="col-span-2 text-6xl text-center" />;
 }
+
+export default React.Fragment;
