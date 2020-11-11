@@ -8,18 +8,31 @@ function getArray(mapFn) {
   return [...Array(getShortNum())].map(mapFn);
 }
 
+function getImageUrl(imageUrl) {
+  return imageUrl + '?id=' + faker.random.number();
+}
+
 function generateData() {
   const products = [];
   const users = [];
   const tweets = [];
   const posts = [];
+  const gallery = [];
+
+  function generateGallery() {
+    for (let galleryIndex = 30; galleryIndex >= 0; galleryIndex--) {
+      const imageUrl = getImageUrl(faker.image.imageUrl());
+
+      gallery.push(imageUrl);
+    }
+  }
 
   function generateProducts() {
     for (let productIndex = 30; productIndex >= 0; productIndex--) {
       const id = faker.lorem.slug();
       const name = faker.commerce.productName();
       const price = faker.commerce.price();
-      const imageUrl = faker.image.technics();
+      const imageUrl = getImageUrl(faker.image.technics());
       const availableQty = faker.random.number();
       const material = faker.commerce.productMaterial();
       const category = faker.commerce.product();
@@ -50,7 +63,7 @@ function generateData() {
     for (let tweetIndex = 10; tweetIndex >= 0; tweetIndex--) {
       const id = faker.random.uuid();
       const text = faker.lorem.sentences();
-      const imageUrl = faker.image.image();
+      const imageUrl = getImageUrl(faker.image.imageUrl());
       const noLikes = faker.random.number();
       const noRetweets = faker.random.number();
       const noQuoteTweets = faker.random.number();
@@ -80,7 +93,7 @@ function generateData() {
       const id = faker.lorem.slug();
       const description = faker.lorem.paragraph();
       const body = faker.lorem.paragraphs();
-      const imageUrl = faker.image.image();
+      const imageUrl = getImageUrl(faker.image.imageUrl());
       const noLikes = faker.random.number();
       const readingTime = `${getShortNum()} mins`;
 
@@ -121,10 +134,12 @@ function generateData() {
     }
   }
 
+  generateGallery();
   generateProducts();
   generateUsers();
 
   const data = {
+    gallery,
     products,
     users,
     tweets,
