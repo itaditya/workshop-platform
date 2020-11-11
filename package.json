@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "server": "json-server -p 9191 src/server/server.js",
+    "server": "json-server -p 9191 src/server/seed.js",
     "test": "jest --colors",
     "test-exercises": "yarn test src/exercise-tests/*",
     "evaluate": "yarn test-exercises --testNamePattern='Evaluate Playground'"
@@ -32,6 +32,7 @@
     "faker": "^5.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
-    "json-server": "^0.16.2"
+    "json-server": "^0.16.2",
+    "serverless-http": "^2.6.0"
   }
 }
