@@ -7,8 +7,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "start-api": "json-server --watch -p 9191 src/scripts/seedDb.js",
-    "seed-db": "node src/scripts/seedDb.js",
+    "server": "json-server -p 9191 src/server/server.js",
     "test": "jest --colors",
     "test-exercises": "yarn test src/exercise-tests/*",
     "evaluate": "yarn test-exercises --testNamePattern='Evaluate Playground'"
