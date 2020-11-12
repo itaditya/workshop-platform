@@ -55,7 +55,7 @@ function Navbar({ currentId }) {
           <Tab
             key={tab}
             className={cn(
-              'block px-3 font-semibold tracking-wide rounded-t-md focus:outline-none transition duration-300 ease-in-out',
+              'block px-3 font-semibold tracking-wide rounded-t-md focus:outline-black transition duration-300 ease-in-out',
               {
                 'bg-white': tabIndex === selectedIndex,
                 'hover:bg-white hover:bg-opacity-50': tabIndex !== selectedIndex,
@@ -63,11 +63,6 @@ function Navbar({ currentId }) {
             )}
           >
             <div className="py-2">{tab}</div>
-            <div
-              className={cn('border-b-2 border-transparent transition duration-700 ease-in-out', {
-                'border-orange-400': tabIndex === focusedIndex,
-              })}
-            />
           </Tab>
         ))}
       </TabList>
@@ -117,7 +112,7 @@ function ExerciseLayout({ playground, challenge, notes }) {
           key="notes-section"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="prose"
+          className="prose min-w-content"
         >
           {notes}
         </motion.section>

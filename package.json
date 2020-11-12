@@ -10,7 +10,8 @@
     "server": "json-server -p 9191 src/server/seed.js",
     "test": "jest --colors",
     "test-exercises": "yarn test src/exercise-tests/*",
-    "evaluate": "yarn test-exercises --testNamePattern='Evaluate Playground'"
+    "evaluate": "yarn test-exercises --testNamePattern='Evaluate Playground'",
+    "create-exercise": "node src/scripts/create-exercise.js"
   },
   "dependencies": {
     "@reach/tabs": "^0.11.2",
@@ -34,6 +35,7 @@
     "@testing-library/react": "^11.1.1",
     "@testing-library/user-event": "^12.2.2",
     "babel-jest": "^26.6.3",
+    "birla": "^1.2.0",
     "faker": "^5.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",

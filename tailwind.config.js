@@ -2,7 +2,10 @@ module.exports = {
   theme: {
     extend: {
       maxWidth: {
-        content: '70ch',
+        content: '65ch',
+      },
+      minWidth: {
+        content: '65ch',
       },
       gridTemplateRows: {
         layout: 'auto 1fr',
