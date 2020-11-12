@@ -14,7 +14,7 @@ Learn how to add side-effects in a component for making API requests, setting ti
 
 ## Problems that you might face
 
-#### 1. - API request gives 404.
+#### 1. API request gives 404.
 
 Make sure that you prepend the `baseUrl` in your API request url. On your local machine the request should go to **http://localhost:9191/gallery**.
 
@@ -28,7 +28,7 @@ fetch(`${window.baseUrl}/gallery`)
 
 Also ensure that the API server is running. If its not then run it using the command `yarn server` on command line in your project root.
 
-#### 2. - fetch is getting called non-stop
+#### 2. fetch is getting called non-stop
 
 useEffect by default runs every time a component re-renders. If inside useEffect we now set a different state everytime then the component would go into infinite re-rendering and that means infinite API calls. To fix this we can pass an array as a second argument to useEffect.
 

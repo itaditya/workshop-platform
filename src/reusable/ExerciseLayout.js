@@ -5,6 +5,8 @@ import { Tabs, TabList, Tab, TabPanels, TabPanel, useTabsContext } from '@reach/
 import { motion } from 'framer-motion';
 import cn from 'clsx';
 
+import config from '../config';
+
 function useExerciseParams() {
   const router = useRouter();
 
@@ -20,12 +22,29 @@ function useExerciseParams() {
   };
 }
 
+function PaginateLink({ exerciseId, disabled, children }) {
+  return (
+    <Link href={`/exercises/exercise-${exerciseId}`}>
+      <a
+        tabIndex={disabled ? -1 : 0}
+        className={cn('bg-orange-600 px-4 py-2 rounded-md text-white', {
+          'opacity-25': disabled,
+          'hover:bg-orange-700 focus:bg-orange-800': !disabled,
+        })}
+      >
+        {children}
+      </a>
+    </Link>
+  );
+}
+
 function Navbar({ currentId }) {
   const { selectedIndex, focusedIndex } = useTabsContext();
 
   const isPrevDisabled = currentId === 1;
+  const isNextDisabled = currentId === config.lastExerciseId;
   const prevId = isPrevDisabled ? currentId : currentId - 1;
-  const nextId = currentId + 1;
+  const nextId = isNextDisabled ? currentId : currentId + 1;
   const tabs = ['Playground', 'Final Solution'];
 
   return (
@@ -52,25 +71,18 @@ function Navbar({ currentId }) {
         ))}
       </TabList>
       <h1 className="text-xl font-medium py-4 my-auto">
-        Exercises <span className="tabular-nums">{currentId}</span>
+        Exercises{' '}
+        <motion.span className="inline-block tabular-nums" initial={{ opacity: 0, scale: 3 }} animate={{ opacity: 1, scale: 1 }}>
+          {currentId}
+        </motion.span>
       </h1>
       <div className="space-x-4 my-auto">
-        <Link href={`/exercises/exercise-${prevId}`}>
-          <a
-            tabIndex={isPrevDisabled ? -1 : 0}
-            className={cn('bg-orange-600  px-4 py-2 rounded-md text-white', {
-              'opacity-25': isPrevDisabled,
-              'hover:bg-orange-700 focus:bg-orange-800': !isPrevDisabled,
-            })}
-          >
-            Prev
-          </a>
-        </Link>
-        <Link href={`/exercises/exercise-${nextId}`}>
-          <a className="bg-orange-600 hover:bg-orange-700 focus:bg-orange-800  px-4 py-2 rounded-md text-white">
-            Next
-          </a>
-        </Link>
+        <PaginateLink exerciseId={prevId} disabled={isPrevDisabled}>
+          Prev
+        </PaginateLink>
+        <PaginateLink exerciseId={nextId} disabled={isNextDisabled}>
+          Next
+        </PaginateLink>
       </div>
     </nav>
   );
@@ -79,6 +91,7 @@ function Navbar({ currentId }) {
 function ExerciseLayout({ playground, challenge, notes }) {
   const exerciseParams = useExerciseParams();
   const currentId = exerciseParams.id;
+  const panels = [playground, challenge];
 
   return (
     <Tabs className="min-h-screen bg-gray-200 grid grid-cols-layout grid-rows-layout gap-x-4">
@@ -88,11 +101,21 @@ function ExerciseLayout({ playground, challenge, notes }) {
       </Head>
       <Navbar currentId={currentId} />
       <TabPanels className="bg-white h-full">
-        <TabPanel className="outline-none">{playground}</TabPanel>
-        <TabPanel className="outline-none">{challenge}</TabPanel>
+        {panels.map((panel, panelIndex) => (
+          <TabPanel key={panelIndex} className="outline-none">
+            {panel}
+          </TabPanel>
+        ))}
       </TabPanels>
       <div className="bg-white h-full px-10 py-8">
-        <div className="prose">{notes}</div>
+        <motion.section
+          key="notes-section"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="prose"
+        >
+          {notes}
+        </motion.section>
       </div>
     </Tabs>
   );
