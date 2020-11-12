@@ -94,7 +94,7 @@ function ExerciseLayout({ playground, challenge, notes }) {
   const panels = [playground, challenge];
 
   return (
-    <Tabs className="min-h-screen bg-gray-200 grid grid-cols-layout grid-rows-layout gap-x-6">
+    <Tabs className="min-h-screen bg-gray-200 grid grid-cols-2 xl:grid-cols-layout grid-rows-layout gap-x-6">
       <Head>
         <title>Exercise {currentId}</title>
         <link rel="icon" href="/favicon.ico" />
