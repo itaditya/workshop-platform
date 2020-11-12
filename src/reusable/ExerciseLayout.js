@@ -23,7 +23,7 @@ function useExerciseParams() {
 }
 
 function PaginateLink({ exerciseId, disabled, children }) {
-  const classes = cn('bg-orange-700 text-white px-4 py-2 rounded-md font-semibold tracking-wider', {
+  const classes = cn('bg-orange-700 text-white px-4 py-2 rounded-md font-semibold tracking-wider select-none', {
     'bg-opacity-50 cursor-not-allowed': disabled,
     'hover:bg-orange-800 focus:outline-black': !disabled,
   });
@@ -42,7 +42,7 @@ function PaginateLink({ exerciseId, disabled, children }) {
 }
 
 function Navbar({ currentId }) {
-  const { selectedIndex, focusedIndex } = useTabsContext();
+  const { selectedIndex } = useTabsContext();
 
   const isPrevDisabled = currentId === 1;
   const isNextDisabled = currentId === config.lastExerciseId;
