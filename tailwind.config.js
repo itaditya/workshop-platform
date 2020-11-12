@@ -7,6 +7,9 @@ module.exports = {
       gridTemplateRows: {
         layout: 'auto 1fr',
       },
+      gridTemplateColumns: {
+        layout: '1fr auto',
+      },
       boxShadow: {
         outline: "0 0 0 3px theme('colors.orange.300')",
       },

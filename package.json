@@ -13,7 +13,7 @@
     "evaluate": "yarn test-exercises --testNamePattern='Evaluate Playground'"
   },
   "dependencies": {
-    "@reach/dialog": "^0.11.2",
+    "@reach/tabs": "^0.11.2",
     "@tailwindcss/typography": "^0.2.0",
     "clsx": "1.1.1",
     "framer-motion": "^2.9.4",
