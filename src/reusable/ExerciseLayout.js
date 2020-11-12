@@ -23,15 +23,18 @@ function useExerciseParams() {
 }
 
 function PaginateLink({ exerciseId, disabled, children }) {
+  const classes = cn('bg-orange-700 text-white px-4 py-2 rounded-md font-semibold tracking-wider', {
+    'bg-opacity-50 cursor-not-allowed': disabled,
+    'hover:bg-orange-800 focus:outline-black': !disabled,
+  });
+
+  if (disabled) {
+    return <span className={classes}>{children}</span>;
+  }
+
   return (
     <Link href={`/exercises/exercise-${exerciseId}`}>
-      <a
-        tabIndex={disabled ? -1 : 0}
-        className={cn('bg-orange-600 px-4 py-2 rounded-md text-white', {
-          'opacity-25': disabled,
-          'hover:bg-orange-700 focus:bg-orange-800': !disabled,
-        })}
-      >
+      <a className={classes} tabIndex={disabled ? -1 : 0}>
         {children}
       </a>
     </Link>
@@ -43,8 +46,6 @@ function Navbar({ currentId }) {
 
   const isPrevDisabled = currentId === 1;
   const isNextDisabled = currentId === config.lastExerciseId;
-  const prevId = isPrevDisabled ? currentId : currentId - 1;
-  const nextId = isNextDisabled ? currentId : currentId + 1;
   const tabs = ['Playground', 'Final Solution'];
 
   return (
@@ -54,7 +55,7 @@ function Navbar({ currentId }) {
           <Tab
             key={tab}
             className={cn(
-              'block px-3 rounded-t-md focus:outline-none transition duration-300 ease-in-out',
+              'block px-3 font-semibold tracking-wide rounded-t-md focus:outline-none transition duration-300 ease-in-out',
               {
                 'bg-white': tabIndex === selectedIndex,
                 'hover:bg-white hover:bg-opacity-50': tabIndex !== selectedIndex,
@@ -72,15 +73,19 @@ function Navbar({ currentId }) {
       </TabList>
       <h1 className="text-xl font-medium py-4 my-auto">
         Exercises{' '}
-        <motion.span className="inline-block tabular-nums" initial={{ opacity: 0, scale: 3 }} animate={{ opacity: 1, scale: 1 }}>
+        <motion.span
+          className="inline-block tabular-nums"
+          initial={{ opacity: 0, scale: 3 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
           {currentId}
         </motion.span>
       </h1>
       <div className="space-x-4 my-auto">
-        <PaginateLink exerciseId={prevId} disabled={isPrevDisabled}>
+        <PaginateLink exerciseId={currentId - 1} disabled={isPrevDisabled}>
           Prev
         </PaginateLink>
-        <PaginateLink exerciseId={nextId} disabled={isNextDisabled}>
+        <PaginateLink exerciseId={currentId + 1} disabled={isNextDisabled}>
           Next
         </PaginateLink>
       </div>
