@@ -5,7 +5,7 @@ import { Tabs, TabList, Tab, TabPanels, TabPanel, useTabsContext } from '@reach/
 import { motion } from 'framer-motion';
 import cn from 'clsx';
 
-import config from '../config';
+import config from '../../project.config.json';
 
 function useExerciseParams() {
   const router = useRouter();
@@ -115,7 +115,7 @@ function ExerciseLayout({ playground, challenge, notes }) {
       <div className="bg-white h-full px-10 py-8 shadow-2xl">
         <motion.section
           key="notes-section"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="prose"
         >
