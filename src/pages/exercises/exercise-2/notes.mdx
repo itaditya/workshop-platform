@@ -1,0 +1,41 @@
+## Goals of this Exercise
+
+#### Goal 1 - Call REST APIs from React.
+
+Learn how to make API requests using browser `fetch`.
+
+#### Goal 2 - Render a list in JSX.
+
+Learn how to take an array and show some content using each item in that array.
+
+#### Goal 3 - Call REST APIs from React.
+
+Learn how to add side-effects in a component for making API requests, setting timeouts or any other imperative task.
+
+## Problems that you might face
+
+#### 1. - API request gives 404.
+
+Make sure that you prepend the `baseUrl` in your API request url. On your local machine the request should go to **http://localhost:9191/gallery**.
+
+```js
+fetch(`${window.baseUrl}/gallery`)
+  .then((res) => res.json())
+  .then((data) => {
+    setImgList(data);
+  });
+```
+
+Also ensure that the API server is running. If its not then run it using the command `yarn server` on command line in your project root.
+
+#### 2. - fetch is getting called non-stop
+
+useEffect by default runs every time a component re-renders. If inside useEffect we now set a different state everytime then the component would go into infinite re-rendering and that means infinite API calls. To fix this we can pass an array as a second argument to useEffect.
+
+In this array we list out the only things that should cause the useEffect to run again. For our case we just want useEffect to render once so we'll pass an empty array.
+
+```js
+useEffect(() => {
+  doWhateverOnce();
+}, []);
+```

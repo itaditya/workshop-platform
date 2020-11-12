@@ -1,4 +1,5 @@
 import '@reach/dialog/styles.css';
+import 'prism-themes/themes/prism-coldark-dark.css';
 import '../css/tailwind.css';
 
 if (typeof window !== 'undefined') {

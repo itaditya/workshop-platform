@@ -1,0 +1,27 @@
+## Goals of this Exercise
+
+#### Goal 1 - Practice building blocks of React
+
+Learn how to make React components and render some markup from them. Learn how to declare and update state in React.
+
+#### Goal 2 - Practice working with a React codebase.
+
+Learn how to import components from different files. Understand what are props and how they
+can be passed from one component to its children components.
+
+
+## Problems that you might face
+
+#### 1. useState is not defined
+
+This happens when you don't import `useState` from React npm package. Make sure
+that the following code snippet is present in the playground.js file.
+
+```js
+import { useState } from 'react';
+```
+
+#### 2. Test failed because data-testid="counter" is not found
+
+For the tests to work you need to use the helper components present in the components.js
+file. For your ease, they were already imported in the playground.js file.

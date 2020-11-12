@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 function Challenge() {
   const [stateImgList, setImgList] = useState([]);
+
   useEffect(() => {
     fetch(`${window.baseUrl}/gallery`)
       .then((res) => res.json())

@@ -1,6 +1,6 @@
 import Playground from './playground';
 import Challenge from './challenge';
-import Notes from './notes';
+import Notes from './notes.mdx';
 import ExerciseLayout from '_reusable/ExerciseLayout';
 
 function ExercisePage() {

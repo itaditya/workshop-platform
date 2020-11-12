@@ -44,7 +44,11 @@ function ExerciseLayout({ playground, challenge, notes }) {
           <h1 className="text-xl font-medium">Exercises</h1>
           <div className="space-x-4">
             <Link href={`/exercises/exercise-${prevId}`}>
-              <a className={cn('bg-orange-700 px-4 py-2 rounded-md text-white', { 'opacity-25': isPrevDisabled })}>
+              <a
+                className={cn('bg-orange-700 px-4 py-2 rounded-md text-white', {
+                  'opacity-25': isPrevDisabled,
+                })}
+              >
                 Prev
               </a>
             </Link>
@@ -71,7 +75,7 @@ function ExerciseLayout({ playground, challenge, notes }) {
               >
                 Close Notes
               </button>
-              <div className="prose mt-4">{notes}</div>
+              <div className="prose mt-10">{notes}</div>
             </DialogContent>
           </motion.div>
         </DialogOverlay>
