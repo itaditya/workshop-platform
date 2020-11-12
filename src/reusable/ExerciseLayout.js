@@ -94,20 +94,20 @@ function ExerciseLayout({ playground, challenge, notes }) {
   const panels = [playground, challenge];
 
   return (
-    <Tabs className="min-h-screen bg-gray-200 grid grid-cols-layout grid-rows-layout gap-x-4">
+    <Tabs className="min-h-screen bg-gray-200 grid grid-cols-layout grid-rows-layout gap-x-6">
       <Head>
         <title>Exercise {currentId}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar currentId={currentId} />
-      <TabPanels className="bg-white h-full">
+      <TabPanels className="bg-white h-full shadow-2xl">
         {panels.map((panel, panelIndex) => (
           <TabPanel key={panelIndex} className="outline-none">
             {panel}
           </TabPanel>
         ))}
       </TabPanels>
-      <div className="bg-white h-full px-10 py-8">
+      <div className="bg-white h-full px-10 py-8 shadow-2xl">
         <motion.section
           key="notes-section"
           initial={{ opacity: 0, y: 20 }}

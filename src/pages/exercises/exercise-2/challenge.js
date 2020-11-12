@@ -13,7 +13,7 @@ function Challenge() {
 
   return (
     <div className="pt-8">
-      <h3 className="text-center font-bold text-3xl mb-4">Image Gallery Challenge</h3>
+      <h3 className="text-center font-bold text-3xl mb-6">Image Gallery Challenge</h3>
       <div className="grid grid-cols-2">
         {stateImgList.map((imgUrl, index) => (
           <img src={imgUrl} key={index} />
