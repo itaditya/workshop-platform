@@ -4,9 +4,6 @@ module.exports = {
       maxWidth: {
         content: '65ch',
       },
-      minWidth: {
-        content: '65ch',
-      },
       gridTemplateRows: {
         layout: 'auto 1fr',
       },

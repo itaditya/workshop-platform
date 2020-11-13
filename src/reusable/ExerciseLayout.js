@@ -25,7 +25,7 @@ function useExerciseParams() {
 function PaginateLink({ exerciseId, disabled, children }) {
   const classes = cn('bg-orange-700 text-white px-4 py-2 rounded-md font-semibold tracking-wider select-none', {
     'bg-opacity-50 cursor-not-allowed': disabled,
-    'hover:bg-orange-800 focus:outline-black': !disabled,
+    'hover:bg-orange-800 active:bg-orange-900 focus:outline-black': !disabled,
   });
 
   if (disabled) {
@@ -112,7 +112,7 @@ function ExerciseLayout({ playground, challenge, notes }) {
           key="notes-section"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="prose min-w-content"
+          className="prose"
         >
           {notes}
         </motion.section>
