@@ -5,6 +5,10 @@ People understand new things when they "learn by doing". Its time our courses an
 
 ## Quick Start
 
+Open in [CodeSandbox](https://codesandbox.io/s/github/itaditya/workshop-platform?file=/src/pages/exercises/exercise-1/playground.js)
+
+## Advanced Setup
+
 Fork and clone this repo and then do the following-
 
 1. Install dependencies-
