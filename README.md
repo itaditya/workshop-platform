@@ -1,6 +1,8 @@
 # Workshop Platform
 People understand new things when they "learn by doing". Its time our courses and **workshops** start reflecting that. Make exercises where you ask learners to build something. Then add helpful notes and your version so they try first and see what they missed.
 
+![Demo](public/demo.jpg)
+
 ## Quick Start
 
 Fork and clone this repo and then do the following-
