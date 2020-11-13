@@ -49,6 +49,20 @@ You can also add an evaluator for each exercise like we do in `src/exercise-test
 
 Many challenges go along the lines of - fetch list of blog posts from an API, show the data in UI. For that there is a ready-made API server with various collections. Run it with `yarn server`.
 
-Under the hood it uses `json-server` package so you can GET requests with pagination, filter support and also make mutations like POST request which would keep the side-effects in memory till the server is running.
+Under the hood it uses `json-server` package so you can GET requests with pagination, filter and relations support.
 
-[Documentation on API parameters](https://github.com/typicode/json-server#routes).
+* [Example Request](https://workshop-platform.netlify.app/.netlify/functions/api/users?_limit=3)
+* [Documentation on API parameters](https://github.com/typicode/json-server#routes)
+
+Available resources
+
+```
+http://localhost:9191/gallery
+http://localhost:9191/products
+http://localhost:9191/users
+http://localhost:9191/tweets
+http://localhost:9191/posts
+```
+
+
+You can also do mutations like POST request which would keep the side-effects in memory till the server is running.
