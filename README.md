@@ -35,6 +35,14 @@ If you want to solve Exercise 1 then open `src/pages/exercises/exercise-1/playgr
 
 In the browser you can see the notes on the right-hand side. You can see the tutor's solution by switching tabs. Their code will be present in the `challenge.js` alongside your file.
 
+**Ask Assistant for help**
+
+Running `yarn assistant` can inform you about the common issues in your `playground.js` code. If you use a modern editor like VS Code then it will show squiggly lines below the problematic code as well.
+
+**Get your code evaluated**
+
+Running `yarn evaluate` will test if your code satisfies all the requirements of the challenge. By running `yarn evaluate --watch` you can re-evaluate automatically as soon as you change some code in `playground.js`.
+
 ### For Tutors
 
 Exercise lives in folder `src/pages/exercises/exercise-1`. For each exercise you need to add notes in `notes.mdx` and the challenge in `challenge.js`.
@@ -47,7 +55,7 @@ yarn create-exercise
 
 **Create evaluator tests**
 
-You can also add an evaluator for each exercise like we do in `src/exercise-tests` folder. Run it with `yarn test-exercises`.
+You can also add an evaluator for each exercise like we do in `src/exercise-tests` folder. Run it with `yarn test-challenges`.
 
 **Use JSON APIs**
 
@@ -68,5 +76,8 @@ http://localhost:9191/tweets
 http://localhost:9191/posts
 ```
 
-
 You can also do mutations like POST request which would keep the side-effects in memory till the server is running.
+
+**Lint Code**
+
+Lint your challenges with `yarn lint-challenges`
