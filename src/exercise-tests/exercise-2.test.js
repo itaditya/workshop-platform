@@ -12,7 +12,7 @@ describeEach('Exercise 1 -> Evaluate %s', (name, Component) => {
     render(<Component />);
   });
 
-  it('counter value is 0 by default', async () => {
+  it('fetch and display 20 images', async () => {
     const images = await screen.findAllByRole('img');
 
     expect(images.length).toBe(20);

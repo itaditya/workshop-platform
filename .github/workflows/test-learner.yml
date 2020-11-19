@@ -1,4 +1,4 @@
-name: CI for Exercise
+name: Learner's CI
 on: [push]
 jobs:
   test:

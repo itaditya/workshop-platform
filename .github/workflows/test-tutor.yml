@@ -1,17 +1,17 @@
-name: Platform's CI
+name: Tutor's CI
 on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Test
+    name: Test Challenges
     steps:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
-      - run: yarn test-platform
+      - run: yarn test-challenges
   lint:
     runs-on: ubuntu-latest
-    name: Lint
+    name: Lint Challenges
     steps:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
-      - run: yarn lint-platform
+      - run: yarn lint-challenges
