@@ -15,7 +15,7 @@ describeEach('Exercise 1 -> Evaluate %s', (name, Component) => {
   it('fetch and display 20 images', async () => {
     const images = await screen.findAllByRole('img');
 
-    expect(images.length).toBe(20);
+    expect(images).toHaveLength(20);
     images.forEach((image) => {
       expect(image).toHaveAttribute('src');
     });
