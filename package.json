@@ -12,7 +12,7 @@
     "test-platform": "yarn test 'src/*' --testPathIgnorePatterns='src/exercise-tests/*'",
     "test-exercises": "yarn test 'src/exercise-tests/*'",
     "test-challenges": "yarn test-exercises --testNamePattern='Evaluate Challenge'",
-    "evaluate": "yarn test-exercises --testNamePattern='Evaluate Playground'",
+    "evaluate": "yarn test-exercises --testNamePattern='Evaluate Playground' --reporters='default' --reporters='jest-html-reporter'",
     "lint": "eslint",
     "lint-platform": "yarn lint 'src/**/*.js' --ignore-pattern 'src/pages/exercises' --ignore-pattern 'src/exercise-tests'",
     "lint-challenges": "yarn lint 'src/pages/exercises/**/challenge.js'",
@@ -57,6 +57,7 @@
     "faker": "^5.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
+    "jest-html-reporter": "^3.3.0",
     "json-server": "^0.16.2",
     "serverless-http": "^2.6.0"
   }

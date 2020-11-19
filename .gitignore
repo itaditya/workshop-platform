@@ -26,3 +26,5 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+test-report.html

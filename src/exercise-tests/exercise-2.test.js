@@ -7,7 +7,7 @@ const describeEach = describe.each([
   ['Challenge', Challenge],
 ]);
 
-describeEach('Exercise 1 -> Evaluate %s', (name, Component) => {
+describeEach('Exercise 2 -> Evaluate %s', (name, Component) => {
   beforeEach(() => {
     render(<Component />);
   });
