@@ -4,7 +4,7 @@ function Challenge() {
   const [stateImgList, setImgList] = useState([]);
 
   useEffect(() => {
-    fetch(`${window.baseUrl}/gallery`)
+    fetch(`${window.baseUrl}/gallery?_limit=20`)
       .then((res) => res.json())
       .then((data) => {
         setImgList(data);

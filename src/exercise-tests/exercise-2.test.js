@@ -1,8 +1,23 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import Challenge from '../pages/exercises/exercise-2/challenge';
+import Playground from '../pages/exercises/exercise-2/playground';
 
-describe('Exercise 2 -> Evaluate Challenge', () => {
-  it('exercise 2 test', () => {
-    expect(2 + 3).toBe(5);
+const describeEach = describe.each([
+  ['Playground', Playground],
+  ['Challenge', Challenge],
+]);
+
+describeEach('Exercise 1 -> Evaluate %s', (name, Component) => {
+  beforeEach(() => {
+    render(<Component />);
+  });
+
+  it('counter value is 0 by default', async () => {
+    const images = await screen.findAllByRole('img');
+
+    expect(images.length).toBe(20);
+    images.forEach((image) => {
+      expect(image).toHaveAttribute('src');
+    });
   });
 });
