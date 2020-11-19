@@ -1,17 +1,18 @@
-name: CI for Exercise
+name: Tutor's CI
 on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Evaluate
+    name: Test Challenges
     steps:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
-      - run: yarn evaluate
+      - run: yarn server &
+      - run: yarn test-challenges
   lint:
     runs-on: ubuntu-latest
-    name: Assistant
+    name: Lint Challenges
     steps:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
-      - run: yarn assistant
+      - run: yarn lint-challenges

@@ -1,18 +1,18 @@
-name: Platform's CI
+name: Learner's CI
 on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Test
+    name: Evaluate
     steps:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
       - run: yarn server &
-      - run: yarn test-platform
+      - run: yarn evaluate
   lint:
     runs-on: ubuntu-latest
-    name: Lint
+    name: Assistant
     steps:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
-      - run: yarn lint-platform
+      - run: yarn assistant
