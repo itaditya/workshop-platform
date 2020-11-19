@@ -1,0 +1,17 @@
+name: CI for Exercise
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Evaluate
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - run: yarn evaluate
+  lint:
+    runs-on: ubuntu-latest
+    name: Assistant
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - run: yarn assistant
